@@ -18,11 +18,43 @@ let package = Package(
     ],
     products: [
         .core,
-        .detectionManager
+        .detectionManager,
+        .sourceManager,
+        .beKit,
+        .baseUI,
+        .smartDocumentCaptureKit,
+        .smartDocumentCaptureUI,
+        .passiveFaceLivenessKit,
+        .passiveFaceLivenessUI,
+        .proofOfAddressKit,
+        .proofOfAddressUI,
+        .secureMeKit,
+        .nfcPassportKit,
+        .nfcPassportUI,
+        .livenessKit,
+        .livenessUI,
+        .helmetDetectionUI,
+        .voiceConsentUI
     ],
     targets: [
         .core,
-        .detectionManager
+        .detectionManager,
+        .sourceManager,
+        .beKit,
+        .baseUI,
+        .smartDocumentCaptureKit,
+        .smartDocumentCaptureUI,
+        .passiveFaceLivenessKit,
+        .passiveFaceLivenessUI,
+        .proofOfAddressKit,
+        .proofOfAddressUI,
+        .secureMeKit,
+        .nfcPassportKit,
+        .nfcPassportUI,
+        .livenessKit,
+        .livenessUI,
+        .helmetDetectionUI,
+        .voiceConsentUI
     ]
 )
 
@@ -73,7 +105,7 @@ enum Au10tixProduct: String {
     }
     
     var url: String {
-        "https://assetsglobaldev.blob.core.windows.net/$web/au10tix/ios/swiftpm/\(version)/\(self.rawValue).xcframework.zip"
+        "https://assetsglobaldev.blob.core.windows.net/$web/au10tix/ios/swiftpm/\(Au10tixProduct.version)/\(self.rawValue).xcframework.zip"
     }
 
     var library: Product {
@@ -81,7 +113,7 @@ enum Au10tixProduct: String {
     }
     
     var target: Target {
-        return Target.binaryTarget(name: self.rawValue, dependencies: [], url: self.url, checksum: self.checksum)
+        return Target.binaryTarget(name: self.rawValue, url: self.url, checksum: self.checksum)
     }
 }
 
